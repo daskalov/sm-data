@@ -1,0 +1,1406 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Pragma" name="Cache-Control" content="no-cache">
+<meta http-equiv="Cache-Control" name="Cache-Control" content="no-cache">
+<link rel="stylesheet" href="4_files/mcg_web_defaultapp.css" type="text/css">
+<link rel="stylesheet" href="4_files/web_defaultprint.css" type="text/css" media="print">
+<title>Look Up Course Sections</title>
+<meta http-equiv="Content-Script-Type" name="Default_Script_Language" content="text/javascript">
+<script language="JavaScript" type="text/javascript">
+<!-- Hide JavaScript from older browsers 
+var submitcount=0;
+function checkSubmit() {
+if (submitcount == 0)
+   {
+   submitcount++;
+   return true;
+   }
+else
+   {
+   alert("Your changes have already been submitted.");
+   return false;
+   }
+}
+//  End script hiding -->
+</script>
+<script language="JavaScript" type="text/javascript">
+<!-- Hide JavaScript from older browsers 
+//  Function to open a window
+function windowOpen(window_url) {
+   helpWin = window.open(window_url,'','toolbar=yes,status=no,scrollbars=yes,menubar=yes,resizable=yes,directories=no,location=no,width=350,height=400');
+   if (document.images) { 
+       if (helpWin) helpWin.focus()
+   }
+}
+//  End script hiding -->
+</script>
+</head><body>
+<div class="headerwrapperdiv">
+<div class="pageheaderdiv1">
+<a href="#main_content" onmouseover="window.status='Go to Main Content'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Go to Main Content'; return true" onblur="window.status=''; return true" class="skiplinks">Go to Main Content</a>
+<h1>Minerva</h1></div><div class="headerlinksdiv">
+<span class="pageheaderlinks2">
+<map name="Module_Navigation_Links_H" title="Module Navigation Links">
+<p>
+<a href="#skip_Module_Navigation_Links_H" onmouseover="window.status='Skip Module Navigation Links'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Skip Module Navigation Links'; return true" onblur="window.status=''; return true" class="skiplinks">Skip Module Navigation Links</a>
+<table class="plaintable" summary="This is main table for displaying Tab Items." border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="pldefault">
+<table class="plaintable" summary="This table displays Tab Items." border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="taboff" height="22">
+<a href="https://banweb.mcgill.ca/mcgp/twbkwbis.P_GenMenu?name=bmenu.P_MainMnu" onmouseover="window.status='Main menu'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Main menu'; return true" onblur="window.status=''; return true">MAIN MENU</a>
+</td>
+<td class="bgtaboff" align="right" height="22" valign="top">
+<img src="4_files/web_tab_corner_right.gif" alt="Tab Corner Right" title="Tab Corner Right" name="web_tab_corner_right" border="0" height="20" hspace="0" vspace="0" width="8">
+</td>
+<td class="taboff" height="22">
+<a href="https://banweb.mcgill.ca/mcgp/twbkwbis.P_GenMenu?name=bmenu.P_PersonalMnu" onmouseover="window.status='Personal Menu'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Personal Menu'; return true" onblur="window.status=''; return true">Personal</a>
+</td>
+<td class="bgtaboff" align="right" height="22" valign="top">
+<img src="4_files/web_tab_corner_right.gif" alt="Tab Corner Right" title="Tab Corner Right" name="web_tab_corner_right" border="0" height="20" hspace="0" vspace="0" width="8">
+</td>
+<td class="taboff" height="22">
+<a href="https://banweb.mcgill.ca/mcgp/twbkwbis.P_GenMenu?name=bmenu.P_StuMainMnu" onmouseover="window.status='Student Menu'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Student Menu'; return true" onblur="window.status=''; return true">Student</a>
+</td>
+<td class="bgtaboff" align="right" height="22" valign="top">
+<img src="4_files/web_tab_corner_right.gif" alt="Tab Corner Right" title="Tab Corner Right" name="web_tab_corner_right" border="0" height="20" hspace="0" vspace="0" width="8">
+</td>
+<td class="taboff" height="22">
+<a href="https://banweb.mcgill.ca/mcgp/twbkwbis.P_GenMenu?name=bmenu.P_ApplMnu" onmouseover="window.status='Applicant Menu'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Applicant Menu'; return true" onblur="window.status=''; return true">Applicant</a>
+</td>
+<td class="bgtaboff" align="right" height="22" valign="top">
+<img src="4_files/web_tab_corner_right.gif" alt="Tab Corner Right" title="Tab Corner Right" name="web_tab_corner_right" border="0" height="20" hspace="0" vspace="0" width="8">
+</td>
+<td class="taboff" height="22">
+<a href="https://banweb.mcgill.ca/mcgp/twbkwbis.P_GenMenu?name=bmenu.P_FAApplStuMnu" onmouseover="window.status='Financial Aid/Awards'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Financial Aid/Awards'; return true" onblur="window.status=''; return true">Financial Aid/Awards</a>
+</td>
+<td class="bgtaboff" align="right" height="22" valign="top">
+<img src="4_files/web_tab_corner_right.gif" alt="Tab Corner Right" title="Tab Corner Right" name="web_tab_corner_right" border="0" height="20" hspace="0" vspace="0" width="8">
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td class="bgtabon" colspan="2" width="100%"><img src="4_files/web_transparent.gif" alt="Transparent Image" title="Transparent Image" name="web_transparent" border="0" height="3" hspace="0" vspace="0" width="10"></td></tr></tbody></table>
+</p></map>
+</span>
+<a name="skip_Module_Navigation_Links_H"></a>
+</div>
+<table class="plaintable" summary="This table displays Menu Items and Banner Search textbox." width="100%">
+<tbody><tr>
+<td class="pldefault">
+<div class="headerlinksdiv2">
+&nbsp;
+</div>
+</td>
+<td class="pldefault"><p class="rightaligntext">
+<span class="pageheaderlinks">
+<a href="https://banweb.mcgill.ca/mcgp/twbkwbis.P_GenMenu?name=bmenu.P_RegMnu" class="submenulinktext2">MENU</a>
+|
+<a href="http://www.is.mcgill.ca/whelp/sis_help/rg_3a_cs_add.htm" accesskey="H" onclick="popup = window.open('http://www.is.mcgill.ca/whelp/sis_help/rg_3a_cs_add.htm', 'PopupPage','height=450,width=500,scrollbars=yes,resizable=yes'); return false" target="_blank" onmouseover="window.status='';  return true" onmouseout="window.status=''; return true" onfocus="window.status='';  return true" onblur="window.status=''; return true" class="submenulinktext2">HELP</a>
+|
+<a href="https://banweb.mcgill.ca/mcgp/twbkwbis.P_Logout" accesskey="3" class="submenulinktext2">EXIT</a>
+</span>
+</p></td>
+</tr>
+</tbody></table>
+</div>
+<div class="pagetitlediv">
+<table class="plaintable" summary="This table displays title and static header displays." width="100%">
+<tbody><tr>
+<td class="pldefault">
+<h2>Look Up Course Sections</h2>
+</td>
+<td class="pldefault">
+&nbsp;
+</td>
+<td class="pldefault"><p class="rightaligntext">
+</p><div class="staticheaders">
+260229365 Alexander Daskalov<br>
+Fall 2010<br>
+Mar 28, 2010 01:26 PM<br>
+</div>
+</td>
+</tr>
+<tr>
+<td class="bg3" colspan="3" width="100%"><img src="4_files/web_transparent.gif" alt="Transparent Image" title="Transparent Image" name="web_transparent" border="0" height="3" hspace="0" vspace="0" width="10"></td>
+</tr>
+</tbody></table>
+<a name="main_content"></a>
+</div>
+<div class="pagebodydiv">
+<!--  ** END OF twbkwbis.P_OpenDoc **  -->
+<form action="/mcgp/bwskfreg.P_AltPin1" method="POST" onsubmit="return checkSubmit()">
+<div class="infotextdiv"><table class="infotexttable" summary="This layout table contains information that may be helpful in understanding the content and functionality of this page.  It could be a brief set of instructions, a description of error messages, or other special information."><tbody><tr><td class="indefault"><img src="4_files/web_info.gif" alt="Information" title="Information" name="web_info" border="0" height="28" hspace="0" vspace="0" width="28"></td><td class="indefault"><span class="infotext"> <ul><li>Please click <strong>HELP</strong> at the top right corner of your screen for instructions.
+</li><li>Click on the CRN (Course Reference Number) to see the course description.
+</li><li>From the course description, click on the <b>Syllabus Available</b> link (where available) to see the course outline.
+</li><li>It is your responsibility to fulfill prerequisites as described in the calendar for the course sections you are adding.</li></ul>
+<p></p> <p><font color="#ff0000"><b>Fall term holiday schedule changes</b>: <br>The
+normal Thursday schedule of course activities is cancelled for December
+3, 2009. In its place, all lectures, labs, conferences and other
+course-related activities that are normally held on Mondays will be
+held on Thursday, December 3, 2009 as well. This change in schedule is
+to make up for activities that are cancelled on Monday, October 12 due
+to Thanksgiving Day.</font></p><p><b>Winter term study break: </b>  February 22 to 26, 2010<br><br>Classes are cancelled for all faculties <b>except</b>
+Dentistry, Medicine, Continuing Education (non-credit courses and
+English &amp; French credit courses), Stage in Dietetics Level 3 and
+Student Teaching for Education students.</p> <p>The <a href="http://coursecalendar.mcgill.ca/ug200910/wwhelp/wwhimpl/js/html/wwhelp.htm#href=UGCoD0910.html">Course Calendar</a> offers a more comprehensive listing of dates (including holidays).</p></span></td></tr></tbody></table><p></p></div>
+<input name="TERM_IN" value="201009" type="hidden">
+<input name="sel_crn" value="dummy" type="hidden">
+<input name="assoc_term_in" value="dummy" type="hidden">
+<input name="ADD_BTN" value="dummy" type="hidden">
+<table class="datadisplaytable" summary="This layout table is used to present the sections found" width="100%"><caption class="captiontext">Sections Found</caption>
+<tbody><tr>
+<th colspan="23" class="ddtitle" scope="colgroup">Dentistry</th>
+</tr>
+<tr>
+<th class="ddheader" scope="col">Select</th>
+<th class="ddheader" scope="col"><acronym title="Course Reference Number">CRN</acronym></th>
+<th class="ddheader" scope="col"><abbr title="Subject">Subj</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Course">Crse</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Section">Sec</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Type">Type</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Credit Hours">Credits/CE Units</abbr></th>
+<th class="ddheader" scope="col">Title</th>
+<th class="ddheader" scope="col">Days</th>
+<th class="ddheader" scope="col">Time</th>
+<th class="ddheader" scope="col"><abbr title="Section Capacity">Cap</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Section Actual">Act</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Section Remaining">Rem</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Waitlist Capacity">WL Cap</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Waitlist Actual">WL Act</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Waitlist Remaining">WL Rem</abbr></th>
+<th class="ddheader" scope="col">Instructor</th>
+<th class="ddheader" scope="col">Date (<abbr title="month month">MM</abbr>/<abbr title="day day">DD</abbr>)</th>
+<th class="ddheader" scope="col">Location</th>
+<th class="ddheader" scope="col">Status</th>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=101J1&amp;crn_in=5447&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">5447</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">101J1</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Small Group Teaching</td>
+<td class="dddefault">0.666</td>
+<td class="dddefault">Dentistry Apprenticeship 1.</td>
+<td class="dddefault">MWF</td>
+<td class="dddefault" nowrap="nowrap">11:35 AM-12:25 PM</td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">Peter Chauvin </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=106J1&amp;crn_in=2007&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2007</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">106J1</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Lecture</td>
+<td class="dddefault">1.700</td>
+<td class="dddefault">Introduction to the Patient.</td>
+<td class="dddefault">TR</td>
+<td class="dddefault" nowrap="nowrap">08:35 AM-09:55 AM</td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">Peter Chauvin </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=201&amp;crn_in=5448&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">5448</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">201</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Small Group Teaching</td>
+<td class="dddefault">1.000</td>
+<td class="dddefault">Dentistry Apprenticeship 2.</td>
+<td class="dddefault">MWF</td>
+<td class="dddefault" nowrap="nowrap">09:35 AM-10:25 AM</td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=207&amp;crn_in=2008&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2008</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">207</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Lecture</td>
+<td class="dddefault">2.000</td>
+<td class="dddefault">Introduction: Practice of Dentistry.</td>
+<td class="dddefault">MWF</td>
+<td class="dddefault" nowrap="nowrap">02:35 PM-03:25 PM</td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">Peter Chauvin </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=305J1&amp;crn_in=2009&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2009</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">305J1</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Lecture</td>
+<td class="dddefault">1.000</td>
+<td class="dddefault">Dental Public Health 2.</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">Paul J Allison </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=310J1&amp;crn_in=2010&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2010</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">310J1</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Field Course (GDEU)</td>
+<td class="dddefault">4.000</td>
+<td class="dddefault">Clinical Practice/Junior Clerkship.</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">Jeffrey Myers </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=311J1&amp;crn_in=2011&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2011</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">311J1</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Lecture</td>
+<td class="dddefault">1.000</td>
+<td class="dddefault">Endodontics.</td>
+<td class="dddefault">T</td>
+<td class="dddefault" nowrap="nowrap">01:05 PM-01:55 PM</td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">Herb Borsuk </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">T</td>
+<td class="dddefault" nowrap="nowrap">01:05 PM-01:55 PM</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">Herb Borsuk </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">T</td>
+<td class="dddefault" nowrap="nowrap">01:05 PM-01:55 PM</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">Herb Borsuk </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">T</td>
+<td class="dddefault" nowrap="nowrap">01:05 PM-01:55 PM</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">Herb Borsuk </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">T</td>
+<td class="dddefault" nowrap="nowrap">01:05 PM-01:55 PM</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">Herb Borsuk </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">T</td>
+<td class="dddefault" nowrap="nowrap">01:05 PM-01:55 PM</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">Herb Borsuk </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">T</td>
+<td class="dddefault" nowrap="nowrap">01:05 PM-01:55 PM</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">Herb Borsuk </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">T</td>
+<td class="dddefault" nowrap="nowrap">01:05 PM-01:55 PM</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">Herb Borsuk </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=315J1&amp;crn_in=2012&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2012</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">315J1</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Lecture</td>
+<td class="dddefault">0.700</td>
+<td class="dddefault">Orthodontics.</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">Jean-Marc Retrouvey </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=316D1&amp;crn_in=2013&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2013</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">316D1</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Lecture</td>
+<td class="dddefault">2.000</td>
+<td class="dddefault">Pediatric Dentistry.</td>
+<td class="dddefault">R</td>
+<td class="dddefault" nowrap="nowrap">01:05 PM-02:25 PM</td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">Irwin M Fried </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault" nowrap="nowrap">02:35 PM-04:55 PM</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">Irwin M Fried </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=317D1&amp;crn_in=2014&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2014</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">317D1</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Lecture</td>
+<td class="dddefault">1.500</td>
+<td class="dddefault">Oral Pathology and Medicine.</td>
+<td class="dddefault">F</td>
+<td class="dddefault" nowrap="nowrap">09:05 AM-10:25 AM</td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">Peter Chauvin </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=318J1&amp;crn_in=2015&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2015</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">318J1</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Lecture</td>
+<td class="dddefault">1.000</td>
+<td class="dddefault">Periodontology.</td>
+<td class="dddefault">R</td>
+<td class="dddefault" nowrap="nowrap">08:05 AM-08:55 AM</td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">Veronique Benhamou Cohen , Simon Tran </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=319D1&amp;crn_in=2016&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2016</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">319D1</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Lecture</td>
+<td class="dddefault">1.500</td>
+<td class="dddefault">Dental Pharmacology.</td>
+<td class="dddefault">T</td>
+<td class="dddefault" nowrap="nowrap">08:05 AM-08:55 AM</td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">Catherine Linda Wiltshire </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=320J1&amp;crn_in=3193&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">3193</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">320J1</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Lecture</td>
+<td class="dddefault">2.330</td>
+<td class="dddefault">Restorative Dentistry.</td>
+<td class="dddefault">TR</td>
+<td class="dddefault" nowrap="nowrap">11:35 AM-12:55 PM</td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">Ngoc Tuan Dinh </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=322&amp;crn_in=4264&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">4264</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">322</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Lecture</td>
+<td class="dddefault">3.000</td>
+<td class="dddefault">Image Interpretation.</td>
+<td class="dddefault">MWF</td>
+<td class="dddefault" nowrap="nowrap">04:35 PM-05:25 PM</td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">Marie Edith Dagenais </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=323J1&amp;crn_in=2017&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2017</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">323J1</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Lecture</td>
+<td class="dddefault">1.330</td>
+<td class="dddefault">Oral and Maxillofacial Surgery.</td>
+<td class="dddefault">T</td>
+<td class="dddefault" nowrap="nowrap">06:05 PM-08:55 PM</td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">40</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">Deborah Iera , Thomas Carl White </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=405D1&amp;crn_in=2018&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2018</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">405D1</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Lecture</td>
+<td class="dddefault">1.500</td>
+<td class="dddefault">Practice Management.</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">Anthony Iannella </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=410D1&amp;crn_in=2020&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2020</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">410D1</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Clinical Teaching</td>
+<td class="dddefault">5.500</td>
+<td class="dddefault">Clinical Practice/Senior Clerkship.</td>
+<td class="dddefault">T</td>
+<td class="dddefault" nowrap="nowrap">08:05 AM-09:55 AM</td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">Jeffrey Myers </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=411D1&amp;crn_in=2021&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2021</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">411D1</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Lecture</td>
+<td class="dddefault">0.500</td>
+<td class="dddefault">Endodontics.</td>
+<td class="dddefault">T</td>
+<td class="dddefault" nowrap="nowrap">01:05 PM-04:55 PM</td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">Herb Borsuk </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=415D1&amp;crn_in=2022&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2022</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">415D1</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Lecture</td>
+<td class="dddefault">1.500</td>
+<td class="dddefault">Orthodontics.</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">Jean-Marc Retrouvey </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=416D1&amp;crn_in=2023&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2023</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">416D1</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Lecture</td>
+<td class="dddefault">2.000</td>
+<td class="dddefault">Pediatric Dentistry.</td>
+<td class="dddefault">MWF</td>
+<td class="dddefault" nowrap="nowrap">01:35 PM-02:25 PM</td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">Irwin M Fried </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=423D1&amp;crn_in=2025&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2025</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">423D1</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Lecture</td>
+<td class="dddefault">2.500</td>
+<td class="dddefault">Oral Maxillofacial Surgery &amp; Pathology.</td>
+<td class="dddefault">R</td>
+<td class="dddefault" nowrap="nowrap">06:05 PM-08:55 PM</td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">Deborah Iera , Peter Chauvin , Thomas Carl White </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=437D1&amp;crn_in=2026&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2026</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">437D1</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Lecture</td>
+<td class="dddefault">1.000</td>
+<td class="dddefault">Clinical Decision Making.</td>
+<td class="dddefault">T</td>
+<td class="dddefault" nowrap="nowrap">08:35 AM-12:25 PM</td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">34</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">John Blomfield , Shahrokh Esfandiari </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=DENT&amp;crse_in=563&amp;crn_in=10713&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">10713</a></td>
+<td class="dddefault">DENT</td>
+<td class="dddefault">563</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Lecture</td>
+<td class="dddefault">1.000</td>
+<td class="dddefault">Introduction to Research.</td>
+<td class="dddefault">W</td>
+<td class="dddefault" nowrap="nowrap">10:05 AM-11:25 AM</td>
+<td class="dddefault">15</td>
+<td class="dddefault">0</td>
+<td class="dddefault">15</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">Mari Tuulia Kaartinen </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">F</td>
+<td class="dddefault" nowrap="nowrap">12:05 PM-12:55 PM</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">&nbsp;</td>
+<td class="dddefault">Mari Tuulia Kaartinen </td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<th colspan="23" class="ddtitle" scope="colgroup">External</th>
+</tr>
+<tr>
+<th class="ddheader" scope="col">Select</th>
+<th class="ddheader" scope="col"><acronym title="Course Reference Number">CRN</acronym></th>
+<th class="ddheader" scope="col"><abbr title="Subject">Subj</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Course">Crse</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Section">Sec</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Type">Type</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Credit Hours">Credits/CE Units</abbr></th>
+<th class="ddheader" scope="col">Title</th>
+<th class="ddheader" scope="col">Days</th>
+<th class="ddheader" scope="col">Time</th>
+<th class="ddheader" scope="col"><abbr title="Section Capacity">Cap</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Section Actual">Act</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Section Remaining">Rem</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Waitlist Capacity">WL Cap</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Waitlist Actual">WL Act</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Waitlist Remaining">WL Rem</abbr></th>
+<th class="ddheader" scope="col">Instructor</th>
+<th class="ddheader" scope="col">Date (<abbr title="month month">MM</abbr>/<abbr title="day day">DD</abbr>)</th>
+<th class="ddheader" scope="col">Location</th>
+<th class="ddheader" scope="col">Status</th>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=EXTL&amp;crse_in=EXDE&amp;crn_in=2410&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2410</a></td>
+<td class="dddefault">EXTL</td>
+<td class="dddefault">EXDE</td>
+<td class="dddefault">015</td>
+<td class="dddefault">Exchange Term Away</td>
+<td class="dddefault">0.000</td>
+<td class="dddefault">Exchange Term Away-Dentistry</td>
+<td colspan="2" class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=EXTL&amp;crse_in=IUDE&amp;crn_in=2476&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2476</a></td>
+<td class="dddefault">EXTL</td>
+<td class="dddefault">IUDE</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Inter-University Transfer Crse</td>
+<td class="dddefault">0.000</td>
+<td class="dddefault">Inter-University Transfer</td>
+<td colspan="2" class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=EXTL&amp;crse_in=IUDE&amp;crn_in=2477&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2477</a></td>
+<td class="dddefault">EXTL</td>
+<td class="dddefault">IUDE</td>
+<td class="dddefault">002</td>
+<td class="dddefault">Inter-University Transfer Crse</td>
+<td class="dddefault">0.000</td>
+<td class="dddefault">Inter-University Transfer</td>
+<td colspan="2" class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=EXTL&amp;crse_in=IUDE&amp;crn_in=2478&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2478</a></td>
+<td class="dddefault">EXTL</td>
+<td class="dddefault">IUDE</td>
+<td class="dddefault">003</td>
+<td class="dddefault">Inter-University Transfer Crse</td>
+<td class="dddefault">0.000</td>
+<td class="dddefault">Inter-University Transfer</td>
+<td colspan="2" class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=EXTL&amp;crse_in=IUDE&amp;crn_in=2479&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2479</a></td>
+<td class="dddefault">EXTL</td>
+<td class="dddefault">IUDE</td>
+<td class="dddefault">004</td>
+<td class="dddefault">Inter-University Transfer Crse</td>
+<td class="dddefault">0.000</td>
+<td class="dddefault">Inter-University Transfer</td>
+<td colspan="2" class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=EXTL&amp;crse_in=IUDE&amp;crn_in=2480&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2480</a></td>
+<td class="dddefault">EXTL</td>
+<td class="dddefault">IUDE</td>
+<td class="dddefault">005</td>
+<td class="dddefault">Inter-University Transfer Crse</td>
+<td class="dddefault">0.000</td>
+<td class="dddefault">Inter-University Transfer</td>
+<td colspan="2" class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=EXTL&amp;crse_in=IUDE&amp;crn_in=2481&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2481</a></td>
+<td class="dddefault">EXTL</td>
+<td class="dddefault">IUDE</td>
+<td class="dddefault">006</td>
+<td class="dddefault">Inter-University Transfer Crse</td>
+<td class="dddefault">0.000</td>
+<td class="dddefault">Inter-University Transfer</td>
+<td colspan="2" class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=EXTL&amp;crse_in=IUDE&amp;crn_in=2482&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2482</a></td>
+<td class="dddefault">EXTL</td>
+<td class="dddefault">IUDE</td>
+<td class="dddefault">007</td>
+<td class="dddefault">Inter-University Transfer Crse</td>
+<td class="dddefault">0.000</td>
+<td class="dddefault">Inter-University Transfer</td>
+<td colspan="2" class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=EXTL&amp;crse_in=IUDE&amp;crn_in=2483&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2483</a></td>
+<td class="dddefault">EXTL</td>
+<td class="dddefault">IUDE</td>
+<td class="dddefault">008</td>
+<td class="dddefault">Inter-University Transfer Crse</td>
+<td class="dddefault">0.000</td>
+<td class="dddefault">Inter-University Transfer</td>
+<td colspan="2" class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=EXTL&amp;crse_in=IUDE&amp;crn_in=2484&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2484</a></td>
+<td class="dddefault">EXTL</td>
+<td class="dddefault">IUDE</td>
+<td class="dddefault">009</td>
+<td class="dddefault">Inter-University Transfer Crse</td>
+<td class="dddefault">0.000</td>
+<td class="dddefault">Inter-University Transfer</td>
+<td colspan="2" class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=EXTL&amp;crse_in=IUDE&amp;crn_in=2485&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2485</a></td>
+<td class="dddefault">EXTL</td>
+<td class="dddefault">IUDE</td>
+<td class="dddefault">010</td>
+<td class="dddefault">Inter-University Transfer Crse</td>
+<td class="dddefault">0.000</td>
+<td class="dddefault">Inter-University Transfer</td>
+<td colspan="2" class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=EXTL&amp;crse_in=IUDE&amp;crn_in=2486&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2486</a></td>
+<td class="dddefault">EXTL</td>
+<td class="dddefault">IUDE</td>
+<td class="dddefault">011</td>
+<td class="dddefault">Inter-University Transfer Crse</td>
+<td class="dddefault">0.000</td>
+<td class="dddefault">Inter-University Transfer</td>
+<td colspan="2" class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=EXTL&amp;crse_in=IUDE&amp;crn_in=2487&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2487</a></td>
+<td class="dddefault">EXTL</td>
+<td class="dddefault">IUDE</td>
+<td class="dddefault">012</td>
+<td class="dddefault">Inter-University Transfer Crse</td>
+<td class="dddefault">0.000</td>
+<td class="dddefault">Inter-University Transfer</td>
+<td colspan="2" class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=EXTL&amp;crse_in=LADE&amp;crn_in=2427&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2427</a></td>
+<td class="dddefault">EXTL</td>
+<td class="dddefault">LADE</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Leave of Absence</td>
+<td class="dddefault">0.000</td>
+<td class="dddefault">Leave of Absence-Dentistry</td>
+<td colspan="2" class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">100</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=EXTL&amp;crse_in=TADE&amp;crn_in=2397&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2397</a></td>
+<td class="dddefault">EXTL</td>
+<td class="dddefault">TADE</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Term Away</td>
+<td class="dddefault">0.000</td>
+<td class="dddefault">Term Away-Dentistry</td>
+<td colspan="2" class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">999</td>
+<td class="dddefault">0</td>
+<td class="dddefault">999</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+<tr>
+<th colspan="23" class="ddtitle" scope="colgroup">Registration</th>
+</tr>
+<tr>
+<th class="ddheader" scope="col">Select</th>
+<th class="ddheader" scope="col"><acronym title="Course Reference Number">CRN</acronym></th>
+<th class="ddheader" scope="col"><abbr title="Subject">Subj</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Course">Crse</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Section">Sec</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Type">Type</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Credit Hours">Credits/CE Units</abbr></th>
+<th class="ddheader" scope="col">Title</th>
+<th class="ddheader" scope="col">Days</th>
+<th class="ddheader" scope="col">Time</th>
+<th class="ddheader" scope="col"><abbr title="Section Capacity">Cap</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Section Actual">Act</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Section Remaining">Rem</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Waitlist Capacity">WL Cap</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Waitlist Actual">WL Act</abbr></th>
+<th class="ddheader" scope="col"><abbr title="Waitlist Remaining">WL Rem</abbr></th>
+<th class="ddheader" scope="col">Instructor</th>
+<th class="ddheader" scope="col">Date (<abbr title="month month">MM</abbr>/<abbr title="day day">DD</abbr>)</th>
+<th class="ddheader" scope="col">Location</th>
+<th class="ddheader" scope="col">Status</th>
+</tr>
+<tr>
+<td class="dddefault"><abbr title="Not available for registration">NR</abbr></td>
+<td class="dddefault"><a href="https://banweb.mcgill.ca/mcgp/bwckschd.p_disp_listcrse?term_in=201009&amp;subj_in=REGN&amp;crse_in=RCDE&amp;crn_in=2330&amp;search_mode_in=NON_NT" onmouseover="window.status='Detail';  return true" onfocus="window.status='Detail';  return true" onmouseout="window.status='';  return true" onblur="window.status='';  return true">2330</a></td>
+<td class="dddefault">REGN</td>
+<td class="dddefault">RCDE</td>
+<td class="dddefault">001</td>
+<td class="dddefault">Registration Course</td>
+<td class="dddefault">0.000</td>
+<td class="dddefault">I confirm Dental Reg</td>
+<td colspan="2" class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">500</td>
+<td class="dddefault">0</td>
+<td class="dddefault">500</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault">0</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">09/01-12/03</td>
+<td class="dddefault"><abbr title="To Be Announced">TBA</abbr></td>
+<td class="dddefault">Active</td>
+</tr>
+<tr>
+<td colspan="23" class="dddefault">&nbsp;</td>
+</tr>
+</tbody></table>
+<br>
+<input name="ADD_BTN" value="Class Search" type="submit">
+</form>
+
+<!--  ** START OF twbkwbis.P_CloseDoc **  -->
+<table class="plaintable" summary="This is table displays line separator at end of the page." border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="bgtabon" colspan="2" width="100%"><img src="4_files/web_transparent.gif" alt="Transparent Image" title="Transparent Image" name="web_transparent" border="0" height="3" hspace="0" vspace="0" width="10"></td></tr></tbody></table>
+<a href="#top" onmouseover="window.status='Skip to top of page'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Skip to top of page'; return true" onblur="window.status=''; return true" class="skiplinks">Skip to top of page</a>
+<div class="pagefooterdiv">
+<span class="releasetext">Release: 7.1.0.1 / 1.33</span>
+</div>
+<div class="div2"></div>
+<div class="div3"></div>
+<div class="div4"></div>
+<div class="div5"></div>
+<div class="div6"></div>
+</div></body></html>

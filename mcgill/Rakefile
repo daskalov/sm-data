@@ -1,0 +1,137 @@
+require 'rubygems'
+require 'hpricot'
+require 'json'
+
+$info_order = [ :select, :crn, :crs_a, :crs_b, :sec, :section,
+  :credits, :title, :days, :time, :cap, :act, :rem,
+  :wl_cap, :wl_act, :wl_rem, :prof, :date, :location, :status ]
+
+def get_course_info(course_tr)
+  info = {}
+  cells = (course_tr/:td)
+  $info_order.each_with_index do |colname, i|
+    if contents = cells[i]
+      info[colname] = (contents.children.first.is_a?(Hpricot::Elem)) ?
+        contents.children.first.inner_html : contents.inner_html
+    end
+  end
+  info
+end
+
+def all_courses(page)
+  course_threshold = 15
+  rows = (page/:tr)
+  rows.select { |r| (r/:td).size > course_threshold }
+end
+
+def hour_to_24h(hour, hour_mod)
+  hour = hour.to_i
+  hour += 12 if hour_mod =~ /PM/ && hour < 12
+  hour
+end
+
+def split_time(time)
+  time =~ /(\d{2}):(\d{2}) (\w+)-(\d{2}):(\d{2})(.*)/
+  start_hour, start_min, start_mod, end_hour, end_min, end_mod = $1, $2, $3, $4, $5
+  if start_hour && end_hour
+    start_hour = hour_to_24h(start_hour, start_mod)
+    # hacky; use the end_mod and hour_to_24h function
+    end_hour = time[9,2].to_i
+    end_hour += 12 if time[15,2] == "PM" && end_hour < 12
+  end
+  return start_hour, start_min.to_i, end_hour, end_min.to_i
+end
+
+def create_section(course, semester)
+  i = get_course_info(course)
+  start_hour, start_min, end_hour, end_min = split_time(i[:time])
+  title = i[:title].chomp! "."
+  if start_hour && title && (i[:days] =~ /M|T|W|R|F|S/) && (i[:days] !~ /TBA/)
+    days = i[:days]
+    info = {
+      :course => {
+        :code => {
+          :crsa => i[:crs_a],
+          :crsb => i[:crs_b],
+          :full => "#{i[:crs_a]} #{i[:crs_b]}"
+        },
+        :title => title,
+        :semester => semester,
+      },
+      :kind => i[:section],
+      :cid => i[:crn],
+      :extra => {
+        :prof => i[:prof],
+        :location => i[:location],
+        :credits => i[:credits]
+      },
+      :time => {
+        :days => {
+          :m => days =~ /M/ ? true : false,
+          :t => days =~ /T/ ? true : false,
+          :w => days =~ /W/ ? true : false,
+          :r => days =~ /R/ ? true : false,
+          :f => days =~ /F/ ? true : false,
+          :s => days =~ /S/ ? true : false,
+          :n => days =~ /N/ ? true : false
+        },
+        :tagen => i[:days],
+        :start => {
+          :hour => start_hour,
+          :minute => start_min
+        },
+        :end => {
+          :hour => end_hour,
+          :minute => end_min
+        }
+      }
+    }
+    info
+  end
+end
+
+def extract_courses(sections)
+  sections.map do |s|
+    code = s[:course][:code][:full]
+    title = s[:course][:title]
+    {
+      :title => title,
+      :code => code,
+      :aug => "#{code} #{title}",
+      :semester => s[:course][:semester]
+    }
+  end.uniq do |c|
+    "#{c[:aug]} #{c[:semester]}"
+  end
+end
+
+task :data do
+  sections = []
+  {
+    'F' => 'f.html',
+    'W' => 'w.html'
+  }.each do |sem, sched_file|
+    File.open "./current/#{sched_file}" do |f|
+      page = Hpricot f
+      all_courses(page).each do |c|
+        sections.push(create_section(c, sem))
+      end
+    end
+  end
+  sections.reject! { |s| s == nil }
+  courses = extract_courses(sections)
+  full = {
+    :metadata => {
+      :school => {
+        :name => 'McGill',
+        :short => 'mcgill'
+      },
+      :system => 'Minerva'
+    },
+    :data => {
+      :courses => courses,
+      :sections => sections
+    }
+  }
+  puts JSON.pretty_generate(full)
+end
