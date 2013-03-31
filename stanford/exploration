@@ -1,0 +1,31 @@
+# Stanford course database
+# All courses
+    http://explorecourses.stanford.edu/
+
+    http://explorecourses.stanford.edu/search?view=catalog&catalog=&page=0&q=ACCT&filter-catalognumber-ACCT=on&filter-coursestatus-Active=on&filter-term-Autumn=on
+
+    Printer-friendly should be easiest to scrape because you can get it to output the courses, with descriptions, and offered times.
+        http://explorecourses.stanford.edu/print?filter-term-Summer=on&filter-coursestatus-Active=on&filter-term-Spring=on&filter-term-Winter=on&filter-term-Autumn=on&filter-catalognumber-ACCT=on&filter-catalognumber-ACCT=on&q=ACCT&descriptions=on&schedules=on
+
+    # Idea 1
+        Get all course code first-parts (ACCT, MGTECON, FINANCE) etc, and sub those in the above URL to get it to output each possible field, and grab those results
+        http://explorecourses.stanford.edu/
+            Get all crs from here
+            plug into below
+            Done
+
+        urlForCourse = (crs) -> """
+            http://explorecourses.stanford.edu/print?
+                filter-coursestatus-Active=on&
+                filter-term-Spring=on&
+                filter-term-Winter=on&
+                filter-term-Autumn=on&
+                filter-catalognumber-#{crs}=on&
+                filter-catalognumber-#{crs}=on&
+                q=#{crs}&
+                descriptions=on&
+                schedules=on
+        """
+
+        # Step 1. All course headings
+        # Step 2. Course / Section info from a page of courses
