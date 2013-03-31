@@ -1,0 +1,207 @@
+Course Data for Smart Minerva 2.0
+
+This repository serves two purposes:
+
+1. It contains programs capable of scraping the course data for
+various schools. These are here to act as basic starting
+templates for scraping data from any other schools, for use as
+data scrapers for any other project that could make use of such
+a scraper or data, as well as to be accessible to anyone
+wishing to improve the scrapers in some capacity.
+
+2. It acts as the authoritative store for all course data used
+by Smart Minerva in course scheduling. If Smart Minerva is
+computing schedules for a certain school, the data used in
+production was obtained from this repository. It's possible
+that at any time the data in production is lagging behind that
+presently stored here, but for the most part the two are kept
+in sync.
+
+Several directory and file conventions need to be followed for
+the course scrapers and data contianed herein to be immediately
+usable by Smart Minerva.
+
+Directory Conventions:
+
+For a given school SCHOOL_NAME:
+
+1. The Scraper
+If there's a scraper for that school, there exists a directory:
+./SCHOOL_NAME
+containing all of the files necessary to scrape the course data
+for that school. Every such directory can follow its own
+internal structure, so long as it is capable of producing a
+data file as per the next point.
+
+2. The Data
+The data for SCHOOL_NAME is contained in a file
+./SCHOOL_NAME.json with the following structure:
+
+# The JSON structure is at its root an object with two keys
+# `metadata`: The data describing this school.
+# `data`: The actual data for this school
+{
+  metadata: {
+    school: {
+      name: 'Some School', # The human-readable conventional
+                           # name for this school.
+      short: 'some_school' # `short` Should match the parent
+                           # directory for the scraper, as well
+                           # as this JSON file.
+    },
+    system: 'Some School Reg' # Optional. The name of the
+                              # system students use to
+                              # register for classes at
+                              # the school.
+  },
+  data: {
+    # The value for the data key is another object with two
+    # keys, each of which is an array that lists all of the
+    # values of that type.
+    #
+    # `courses`:
+    #   A course is an entity representing an entire course
+    #   that a student might take. Physics 101, etc. A course
+    #   might be comprised of multiple independent sections,
+    #   like lectures, labs, seminars, tutorials, etc.
+    #
+    #   This is the level of granularity an individual student
+    #   using Smart Minerva should be thinking about. A
+    #   student needs to decide the courses to take. Deciding
+    #   on the specific sections that need to be registered to
+    #   do so is the point of the rest of the system.
+    #
+    #   Courses that are searched and `added` are read from
+    #   this set of data. Once a course appears, the individual
+    #   sections offered by that course are also displayed and
+    #   can be selected/deselected by a student. The student
+    #   implicitly selects a list of sections by selecting
+    #   courses and indicating which types of sections they
+    #   care to list as part of their registered week.
+    #
+    # `sections`:
+    #   The heavy-lifting done by Smart Minerva revolves around
+    #   finding all of the valid ways a list of sections can be
+    #   combined together to form a valid schedule.
+    #
+    #   A section represents a specific block of time in a
+    #   specific location for which a student is booked. Every
+    #   section is thus mutually exclusive with every other
+    #   section in that student's schedule.
+    #
+    #   Most scrapers will scrape only section data, and
+    #   produce the course data from the section data, since
+    #   every section belongs to a specific course such that a
+    #   complete ist of courses can be inferred from a list of
+    #   sections.
+    #
+    # tl;dr:
+    #   * A student thinks in terms of courses. This semester,
+    #     I'd like to schedule course X, Y, Z.
+    #
+    #   * The scheduler thinks in terms of sections. Find all
+    #     of the ways the sections that are part of courses X,
+    #     Y, and Z that the student wishes to enroll in fit
+    #     together without a timing conflict.
+    #
+    courses: [
+      {
+        title: String,
+        code: String,
+        aug: String,
+        semester: 'F' | 'W'
+      }
+    ],
+    sections: [
+      {
+        course: {       # Some way to ref the course
+          code: {
+            # crsa, crsb were originally slated to be
+            # required, but were never used in v2.
+            # Now listed as optional, and shouldn't be used
+            # in the app.
+            crsa: String,   # optional
+            crsb: String,   # optional
+            full: String    # Full course code
+          },
+          title: String,
+          semester: String
+          # Fall   F
+          # Winter W
+          #
+          # Autumn F
+          # Winter W
+          # Spring R
+          # Summer S
+        },
+        kind: String,   # Lecture, tutorial, etc.
+        cid: String     # Optional
+        extra: {
+          prof: String,
+          location: String,
+          credits: String
+        },
+        time: {
+          days: {
+            m: Boolean,
+            t: Boolean,
+            w: Boolean,
+            r: Boolean,
+            f: Boolean,
+            s: Boolean,
+            n: Boolean
+          },
+          start: {
+            hour: Integer,
+            minute: Integer
+          },
+          end: {
+            hour: Integer,
+            minute: Integer
+          }
+        }
+      }
+    ]
+  }
+}
+
+> KIND
+
+{
+  "course": {
+    "code": {
+      "full": "ACCT 210"
+    },
+    "title": "Financial Accounting",
+    "parsed_semester": "Autumn",
+    "semester": "F"
+  },
+  "klass": "55351",
+  "section": "02",
+  "grading": "GSB Letter Graded",
+  "tagen": "Mon, Thu",
+  "extra": {
+    "prof": "Beyer, A. (PI)",
+    "location": "GSB Class of 1968 105",
+    "credits": "4"
+  },
+  "time": {
+    "days": {
+      "m": true,
+      "t": false,
+      "w": false,
+      "r": true,
+      "f": false,
+      "s": false,
+      "n": false
+    },
+    "start": {
+      "hour": 10,
+      "minute": 0
+    },
+    "end": {
+      "hour": 11,
+      "minute": 45
+    }
+  }
+}
