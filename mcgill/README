@@ -1,0 +1,6 @@
+rake data
+    Parse current/f.html, current/w.html to get all section info, and print the
+    correct JSON to stdout.
+
+rake data > ../mcgill.json
+    Update the data JSON file.
